@@ -13,9 +13,33 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id String @id @default(uuid())
-  name String
-  lastName String
-  email String
+model Campaing {
+  id              String      @id @default(uuid())
+  name            String
+  status          Boolean     @default(true)
+  totalResponses  Int         @default(0)
+  url             String
+  audiences       Audience[]  @relation("CampaignAudiences")
+  questions       Question[]  @relation("CampaignQuestions")
+  questionIDs     String[]
+}
+
+model Audience {
+  id         String      @id @default(uuid())
+  name       String
+  description String
+  ageFrom    Int?
+  ageTo      Int?
+  gender     String?
+  Country    String?
+  State      String?
+  campaigns  Campaing[]  @relation("CampaignAudiences")
+}
+
+model Question {
+  id         String      @id @default(uuid())
+  type       String
+  question   String
+  campaign   Campaing?    @relation("CampaignQuestions", fields: [campaignID], references: [id])
+  campaignID String?
 }

@@ -6,6 +6,9 @@
     "build": "npx tsc",
     "dev": "ts-node-dev --respawn index.ts"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

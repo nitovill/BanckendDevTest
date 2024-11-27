@@ -4,8 +4,10 @@ import routes from "./routes/index";
 //headers
 const app: Application = express();
 app.use(express.json({ limit: "50mb" }));
+
 //routes
 app.use("/api", routes);
+
 //control de errores
 interface error {
   status: number;
