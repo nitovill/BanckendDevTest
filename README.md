@@ -43,3 +43,53 @@ npx prisma migrate dev --name init
 ```bash
 npx prisma db seed
 ```
+## Endpoints de la API
+
+### `GET /api/campaings`
+
+Obtiene la lista de todas las campañas.
+
+**Respuesta:**
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "id": "55a1bdd0-af32-4aad-b5f6-bb83e9bcfe58",
+            "name": "Black Friday Sale",
+            "status": true,
+            "totalResponses": 0,
+            "url": "https://example.com/black-friday",
+            "questionIDs": [
+                "fcf4c83b-2c02-46b2-af94-4b1f94c5a88a",
+                "b6683ddc-e73b-4d1c-a9d2-8d9549b56ba6"
+            ],
+            "questions": [
+                {
+                    "question": "What is your favorite Black Friday deal?"
+                },
+                {
+                    "question": "How can we improve your shopping experience?"
+                }
+            ]
+        }
+    ]
+}
+```
+### `POST /api/campaings`
+
+Crea una campaña.
+
+**Respuesta:**
+```json
+{
+    {
+        "id": "fe0ca95c-7e8b-45eb-b0d7-d5e5bde24bf8",
+        "name": "día del niño",
+        "status": "active",
+        "totalResponses": 0,
+        "url": null,
+        "questionIDs": []
+    }
+}
+```
