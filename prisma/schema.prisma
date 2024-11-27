@@ -16,9 +16,9 @@ datasource db {
 model Campaing {
   id              String      @id @default(uuid())
   name            String
-  status          Boolean     @default(true)
+  status          String     @default("active")
   totalResponses  Int         @default(0)
-  url             String
+  url             String?
   audiences       Audience[]  @relation("CampaignAudiences")
   questions       Question[]  @relation("CampaignQuestions")
   questionIDs     String[]
