@@ -3,9 +3,19 @@ import {
   createCampaing,
   getAllCampaings,
 } from "../controllers/campaingControllers";
+import {
+  campaignValidator,
+  handleValidationErrors,
+} from "../middlewares/campaingValidator";
+
 const router = Router();
 
 router.get("/", getAllCampaings);
-router.post("/", createCampaing);
+
+router.post(
+  "/",
+  [...campaignValidator, handleValidationErrors],
+  createCampaing
+);
 
 export default router;
