@@ -17,7 +17,7 @@ Asegúrate de tener instalado Node.js y PostgreSQL.
 
 2. Navega al directorio del proyecto:
     ```bash
-    cd tu-proyecto
+    cd BanckendDevTest
     ```
 
 3. Instala las dependencias:
