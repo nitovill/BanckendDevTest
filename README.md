@@ -12,7 +12,7 @@ Asegúrate de tener instalado Node.js y PostgreSQL.
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/tu-proyecto.git
+    git clone https://github.com/nitovill/BanckendDevTest
     ```
 
 2. Navega al directorio del proyecto:
